@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 *,
 *::before,
 *::after {
+  font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
 }
 
@@ -14,7 +16,7 @@ body,
 
 body {
   font-family: sans-serif;
-  background-color: #f9fbfd;
+  background-color: #3c6288;
 }
 
 .wrapper {
@@ -27,7 +29,7 @@ header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
-  color: hsl(206, 17%, 28%);
+  color: hsl(0, 0%, 100%);
 }
 
 .card {
@@ -42,6 +44,9 @@ header {
   padding: 30px 40px;
 }
 
+.card-header div {
+  text-align: right;
+}
 .card-header::after {
   content: " ";
   display: block;
@@ -71,10 +76,20 @@ header {
   display: block;
   clear: both;
 }
-
+/* add copy button  */
+#copy-button {
+  background-image: url("https://cdn.iconscout.com/icon/free/png-256/google-forms-1-555787.png");
+  background-size: cover;
+  padding-top: 1px;
+  width: 2em;
+  height: 2em;
+  text-align: right;
+  position: relative;
+  border-color: #e7e9eb;
+}
 .btn {
   border: none;
-  background-color: hsl(360, 91%, 36%);
+  background-color: hsl(208, 13%, 34%);
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
@@ -134,4 +149,5 @@ button[disabled] {
   .btn {
     font-size: 0.8rem;
   }
+
 }
