@@ -5,7 +5,6 @@ var hasSpecialCharacters;
 var hasLowerCharacters;
 var hasUpperCharacters;
 var hasNumberCharacters;
-// variables for each characters
 var numericCharacters = ["0123456789"];
 var specialCharacters = ["~!?/@#$%^&*+-=()[]{}_;:'\"|"];
 var upperCase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
@@ -67,7 +66,7 @@ function generatePassword() {
       "Click OK to confirm including numeric characters."
     );
   }
-
+  // make newPassword concat options
   if (hasSpecialCharacters) newPassword = newPassword.concat(specialCharacters);
     if (hasLowerCharacters) newPassword = newPassword.concat(lowerCase);
     if (hasUpperCharacters) newPassword = newPassword.concat(upperCase);
@@ -76,13 +75,16 @@ function generatePassword() {
   for (var i = 0; i < passwordlent; i++ ) {
     randomPassowrd = randomPassowrd.concat(getRandom(newPassword));
   }
+
+
   return randomPassowrd.join("");
 
 }
 
 
 // Write password to your #password input
-function writePassword() {
+function writePassword(event) {
+  event.preventDefault();
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
@@ -93,7 +95,7 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 // add function for copy to clipboard
-clipboardEl.addEventListener("click", function () {
+clipboardEl.addEventListener("click", function (event) {
   var copyTextarea = document.getElementById("password");
   copyTextarea.select();
   document.execCommand("copy");
