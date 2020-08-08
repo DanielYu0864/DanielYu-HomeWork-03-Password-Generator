@@ -1,5 +1,5 @@
 # 03 JavaScript: Password Generator
-
+![Image of Password Generator](./Screenshot.png)
 ### what I did for homework
 
 1. created variables for each character and button.
